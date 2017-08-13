@@ -1,0 +1,8 @@
+sudo: required
+services:
+  - docker
+script:
+  - docker run --rm -v $PWD:/usr/src/app -w /usr/src/app -v go:/go golang:1.8 bash -c "go test && go build"
+branches:
+  only:
+    - master
