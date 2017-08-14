@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/dtmistry/secrets.svg?branch=master)](https://travis-ci.org/dtmistry/secrets)
 # docker-secrets
 
 Package to read [Docker Secrets](https://docs.docker.com/engine/swarm/secrets/) from a Swarm Cluster
