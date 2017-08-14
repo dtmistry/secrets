@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-  secrets := NewDefaultSecrets()
+  secrets := secrets.NewDefaultSecrets()
   secret, err := secrets.Read("test-secret")
 }
 ```
@@ -47,11 +47,29 @@ import (
 )
 
 func main() {
-  secrets := NewDefaultSecrets()
+  secrets := secrets.NewDefaultSecrets()
   secretMap, err := secrets.ReadAsMap("test-secret")
 }
 ```
 
+### Custom secrets location
 
+Docker secrets are available to a container at `/run/secrets/`. Docker version 17.06 and above allows to configure the default secrets location. Secrets can be read from a custom location by supplying the location - 
 
+```golang
+package main
 
+import (
+  "github.com/dtmistry/secrets"
+)
+
+func main() {
+  secrets, err  := secrets.NewSecrets("/custom/path")
+  secretMap, err := secrets.ReadAsMap("test-secret")
+}
+
+```
+
+### License
+
+Apache License, Version 2.0. See [LICENSE](LICENSE) for the full license text.
