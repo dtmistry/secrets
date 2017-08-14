@@ -74,7 +74,7 @@ func (s *SecretsTester) TestRead() {
 }
 
 func (s *SecretsTester) TestReadBadLocation() {
-	secrets, err := NewSecrets("/tmp/")
+	secrets, err := NewSecrets("/tmp/location/")
 	assert.NoError(s.T(), err)
 	assert.NotNil(s.T(), secrets)
 	secret, err := secrets.Read(SECRET_FILE)
