@@ -1,12 +1,12 @@
 # docker-secrets
 
-Simple package to read [Docker Secrets](https://docs.docker.com/engine/swarm/secrets/) from a Swarm Cluster
+Package to read [Docker Secrets](https://docs.docker.com/engine/swarm/secrets/) from a Swarm Cluster
 
 ## Usage
 
 ### Read
 
-A simple Docker secret like - 
+A Docker secret like -
 
 ```bash
 $ echo "test-secret" | docker secret create test-secret -
@@ -32,6 +32,7 @@ func main() {
 A secret created using a file like -
 
 ```properties
+## Properties file format
 db-user=secret-user
 db-pass=secret-pass
 api-key=super-secret-apikey
